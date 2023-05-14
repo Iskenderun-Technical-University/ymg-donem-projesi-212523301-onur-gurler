@@ -4,7 +4,7 @@ Anaokulu Müdür Yardımcısı Olduğum İçin Öğrenci Kayıtlarında Kullanı
 Uygulama Ekranı
 
 
-[Anasayfa](https://github.com/Iskenderun-Technical-University/ymg-donem-projesi-212523301-onur-gurler/assets/93845829/f60ff86e-7fc4-438c-a9b0-14c1f7e117bd)
+![Login](https://github.com/Iskenderun-Technical-University/ymg-donem-projesi-212523301-onur-gurler/assets/93845829/f60ff86e-7fc4-438c-a9b0-14c1f7e117bd)
 ![Anasayfa](https://github.com/Iskenderun-Technical-University/ymg-donem-projesi-212523301-onur-gurler/assets/93845829/80991c4c-5c10-4afa-ba35-228b34644497)
 
 
