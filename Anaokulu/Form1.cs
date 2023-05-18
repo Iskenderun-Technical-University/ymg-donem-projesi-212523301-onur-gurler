@@ -1,4 +1,6 @@
-using System.Data.OleDb;
+using System.Data;
+using System.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ScrollBar;
 
 namespace Anaokulu
 {
@@ -8,47 +10,43 @@ namespace Anaokulu
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        SqlConnection baglanti = new SqlConnection("Data Source=DESKTOP-OQJ59QU;Initial Catalog=Anaokulu;Integrated Security=True");
+        SqlCommand komut;
+        SqlDataReader read;
+        AnaSayfa anasayfa = new AnaSayfa();
+        DataTable tablo;
+        public SqlDataReader kullanici(TextBox kuladi,TextBox sifre)
         {
-            if (textBox1.Text == "" && textBox2.Text == "")
+            baglanti.Open();
+            komut = new SqlCommand();
+            komut.Connection = baglanti;
+            komut.CommandText = "select *from kullanici where kuladi='"+textBox1.Text+"'";
+            read= komut.ExecuteReader();
+            if (read.Read()==true)
             {
-                MessageBox.Show("Lütfen Kullanýcý Adý ve Þifrenizi Giriniz!!!");
-            }
-            else if (textBox1.Text == "")
-            {
-                MessageBox.Show("Lütfen Kullanýcý Adý Kýsmýný Boþ Býrakmayýnýz!!!");
-            }
-            else if (textBox2.Text == "")
-            {
-                MessageBox.Show("Lütfen Þifre Kýsmýný Boþ Býrakmayýnýz!!!");
-            }
-            else
-            {
-                baglanti.Open();
-                OleDbCommand komut = new OleDbCommand("select * from kullanicigiris where kul_adi='" + textBox1.Text + "'", baglanti);
-                OleDbDataReader okuyucu = komut.ExecuteReader();
-                if (okuyucu.Read() == true)
+                if (sifre.Text == read["sifre"].ToString())
                 {
-                    if (textBox1.Text == okuyucu["kul_adi"].ToString() && textBox2.Text == okuyucu["sifre"].ToString())
-                    {
-                        MessageBox.Show("Hoþgeldin " + okuyucu["adsoyad"].ToString());
-                        Form AnaSayfa = new Form1();
-                        AnaSayfa.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Lütfen Giriþ Bilgilerinizi Kontrol Ediniz!!!");
-                    }
+                    MessageBox.Show("Hoþ Geldiniz");
+                    anasayfa.Show();
                 }
                 else
                 {
-                    MessageBox.Show("Lütfen Giriþ Bilgilerinizi Kontrol Ediniz!!!");
+                    MessageBox.Show("Þifreyi Yanlýþ Girdiniz", "Þifre Hatasý");
                 }
-                baglanti.Close();
             }
+            else
+            {
+                MessageBox.Show("Kullanýcý Adý Sistemde Yok Lütfen Yöneticiye Baþvurunuz", "Kullanýcý Adý Hatasý");
+            }
+            baglanti.Close();
+            return read;
+        }
+       
+        Form1 kulgiris = new Form1();
+        private void button1_Click(object sender, EventArgs e)
+        {
+            kulgiris.kullanici(textBox1, textBox2);         
         }
     }
-    }
+    
 }
