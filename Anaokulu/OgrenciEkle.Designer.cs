@@ -78,7 +78,7 @@
             button3.Name = "button3";
             button3.Size = new Size(106, 52);
             button3.TabIndex = 15;
-            button3.Text = "Anamenü";
+            button3.Text = "Ana Menü";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
@@ -90,6 +90,7 @@
             button2.TabIndex = 14;
             button2.Text = "Temizle";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -99,6 +100,7 @@
             button1.TabIndex = 13;
             button1.Text = "Ekle";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // comboBox2
             // 
@@ -127,21 +129,21 @@
             // 
             textBox3.Location = new Point(157, 169);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(201, 23);
+            textBox3.Size = new Size(179, 23);
             textBox3.TabIndex = 8;
             // 
             // textBox2
             // 
             textBox2.Location = new Point(157, 105);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(201, 23);
+            textBox2.Size = new Size(179, 23);
             textBox2.TabIndex = 7;
             // 
             // textBox1
             // 
             textBox1.Location = new Point(157, 28);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(201, 23);
+            textBox1.Size = new Size(179, 23);
             textBox1.TabIndex = 6;
             // 
             // label6
@@ -208,7 +210,8 @@
             Controls.Add(groupBox1);
             Name = "OgrenciEkle";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "OgrenciEkle";
+            Text = "Öğrenci Ekleme Formu";
+            Load += OgrenciEkle_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);

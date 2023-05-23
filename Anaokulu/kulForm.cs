@@ -40,5 +40,27 @@ namespace Anaokulu
             baglanti.Close();
             return read;
         }
+        public void yeniOgrenci(TextBox tc, TextBox adsoyad, TextBox atel, TextBox btel, ComboBox yas, ComboBox sube, GroupBox ogrencigrup)
+        {
+            if (tc.TextLength==11)
+            {
+                baglanti.Open();
+                komut=new SqlCommand();
+                komut.Connection = baglanti;
+                komut.CommandText = "insert into ogrenci values('"+tc.Text
+                    +"','"+adsoyad.Text+"','"+atel.Text+"','"+btel.Text+"','"+yas.Text+"','"+sube.Text+"')";
+                komut.ExecuteNonQuery();
+                baglanti.Close();
+                MessageBox.Show("Öğrenci eklemesi Başarılı");
+                foreach (Control item in ogrencigrup.Controls) if (item is TextBox or ComboBox) item.Text = "";
+                {
+                    
+                }
+            }
+            else
+            {
+                MessageBox.Show("TC Kimlik numarası 11 haneli olmalıdır.");
+            }
+        }
     }
 }
