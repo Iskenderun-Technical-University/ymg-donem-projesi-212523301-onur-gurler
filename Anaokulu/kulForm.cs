@@ -11,6 +11,7 @@ namespace Anaokulu
     {
         SqlConnection baglanti = new SqlConnection("Data Source=DESKTOP-OQJ59QU;Initial Catalog=Anaokulu;Integrated Security=True");
         SqlCommand komut;
+        SqlCommand komut2;
         SqlDataReader read;
         Anasayfa anasayfa = new Anasayfa();
 
@@ -60,6 +61,21 @@ namespace Anaokulu
             else
             {
                 MessageBox.Show("TC Kimlik numarası 11 haneli olmalıdır.");
+            }
+        }
+        public void yeniSube(TextBox subeTxt, ComboBox ogretmenCmb,TextBox binaTxt, TextBox yrdTxt, ComboBox yasgrCmb, GroupBox subegrup)
+        {
+            baglanti.Open();
+            komut2 = new SqlCommand();
+            komut2.Connection = baglanti;
+            komut2.CommandText = "insert into sube values('" + subeTxt.Text
+                + "','" + ogretmenCmb.Text + "','" + binaTxt.Text + "','" + yrdTxt.Text + "','" + yasgrCmb.Text + "')";
+            komut2.ExecuteNonQuery();
+            baglanti.Close();
+            MessageBox.Show("Şube eklemesi Başarılı");
+            foreach (Control item in subegrup.Controls) if (item is TextBox or ComboBox) item.Text = "";
+            {
+
             }
         }
     }

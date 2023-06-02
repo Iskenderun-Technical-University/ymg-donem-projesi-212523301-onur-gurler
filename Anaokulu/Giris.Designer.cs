@@ -106,7 +106,7 @@
             Controls.Add(groupBox1);
             Name = "Giris";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "Denizciler Anaokulu Öğrenci Kayıt Otomasyonu";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);

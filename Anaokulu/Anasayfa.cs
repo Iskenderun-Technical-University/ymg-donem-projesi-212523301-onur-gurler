@@ -19,7 +19,7 @@ namespace Anaokulu
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             OgrenciEkle ekle = new OgrenciEkle();
             ekle.Show();
         }
@@ -28,6 +28,12 @@ namespace Anaokulu
         {
             this.Close();
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SubeEkle subeEkle = new SubeEkle();
+            subeEkle.Show();
         }
     }
 }

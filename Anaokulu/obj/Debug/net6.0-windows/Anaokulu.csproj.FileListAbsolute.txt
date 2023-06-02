@@ -25,3 +25,4 @@ C:\Users\ONUR\source\repos\Anaokulu\bin\Debug\net6.0-windows\runtimes\unix\lib\n
 C:\Users\ONUR\source\repos\Anaokulu\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\ONUR\source\repos\Anaokulu\obj\Debug\net6.0-windows\Anaokulu.csproj.CopyComplete
 C:\Users\ONUR\source\repos\Anaokulu\obj\Debug\net6.0-windows\Anaokulu.OgrenciEkle.resources
+C:\Users\ONUR\source\repos\Anaokulu\obj\Debug\net6.0-windows\Anaokulu.SubeEkle.resources
