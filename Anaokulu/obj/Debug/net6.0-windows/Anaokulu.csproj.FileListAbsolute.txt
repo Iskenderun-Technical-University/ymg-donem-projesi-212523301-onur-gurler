@@ -26,3 +26,5 @@ C:\Users\ONUR\source\repos\Anaokulu\bin\Debug\net6.0-windows\runtimes\win\lib\ne
 C:\Users\ONUR\source\repos\Anaokulu\obj\Debug\net6.0-windows\Anaokulu.csproj.CopyComplete
 C:\Users\ONUR\source\repos\Anaokulu\obj\Debug\net6.0-windows\Anaokulu.OgrenciEkle.resources
 C:\Users\ONUR\source\repos\Anaokulu\obj\Debug\net6.0-windows\Anaokulu.SubeEkle.resources
+C:\Users\ONUR\source\repos\Anaokulu\obj\Debug\net6.0-windows\Anaokulu.OgretmenEkle.resources
+C:\Users\ONUR\source\repos\Anaokulu\obj\Debug\net6.0-windows\Anaokulu.OgrenciListele.resources

@@ -32,6 +32,7 @@
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
+            button5 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -46,7 +47,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(243, 148);
+            button2.Location = new Point(184, 148);
             button2.Name = "button2";
             button2.Size = new Size(127, 89);
             button2.TabIndex = 1;
@@ -56,22 +57,33 @@
             // 
             // button3
             // 
-            button3.Location = new Point(439, 148);
+            button3.Location = new Point(331, 148);
             button3.Name = "button3";
             button3.Size = new Size(127, 89);
             button3.TabIndex = 2;
-            button3.Text = "button3";
+            button3.Text = "Öğretmen Ekleme";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
-            button4.Location = new Point(627, 148);
+            button4.Location = new Point(625, 148);
             button4.Name = "button4";
             button4.Size = new Size(127, 89);
             button4.TabIndex = 3;
             button4.Text = "Çıkış";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(478, 148);
+            button5.Name = "button5";
+            button5.Size = new Size(127, 89);
+            button5.TabIndex = 4;
+            button5.Text = "Öğrenci Listeleme";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // Anasayfa
             // 
@@ -80,6 +92,7 @@
             BackgroundImage = Properties.Resources.ArkaPlan;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -96,5 +109,6 @@
         private Button button2;
         private Button button3;
         private Button button4;
+        private Button button5;
     }
 }

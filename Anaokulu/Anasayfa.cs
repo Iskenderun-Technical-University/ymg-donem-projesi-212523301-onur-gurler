@@ -35,5 +35,17 @@ namespace Anaokulu
             SubeEkle subeEkle = new SubeEkle();
             subeEkle.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OgretmenEkle ogretmenEkle = new OgretmenEkle();
+            ogretmenEkle.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            OgrenciListele ogrenciListele = new OgrenciListele();
+            ogrenciListele.Show();
+        }
     }
 }

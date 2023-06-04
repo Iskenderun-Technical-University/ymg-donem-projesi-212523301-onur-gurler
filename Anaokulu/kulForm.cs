@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading.Tasks.Dataflow;
 
 namespace Anaokulu
 {
@@ -12,7 +14,10 @@ namespace Anaokulu
         SqlConnection baglanti = new SqlConnection("Data Source=DESKTOP-OQJ59QU;Initial Catalog=Anaokulu;Integrated Security=True");
         SqlCommand komut;
         SqlCommand komut2;
+        SqlCommand komut3;
+        SqlCommand komut4;
         SqlDataReader read;
+        DataTable tablo;
         Anasayfa anasayfa = new Anasayfa();
 
         public SqlDataReader kullanici(TextBox kuladi, TextBox sifre)
@@ -78,5 +83,29 @@ namespace Anaokulu
 
             }
         }
+        public void yeniOgretmen(TextBox ogretmenadsoyadTxt, TextBox ogretmenmezuniyetTxt, TextBox ogretmentecrubeTxt, GroupBox ogretmengrup)
+        {
+            baglanti.Open();
+            komut3 = new SqlCommand();
+            komut3.Connection = baglanti;
+            komut3.CommandText = "insert into ogretmen values('" + ogretmenadsoyadTxt.Text
+                + "','" + ogretmenmezuniyetTxt.Text + "','" + ogretmentecrubeTxt.Text + "')";
+            komut3.ExecuteNonQuery();
+            baglanti.Close();
+            MessageBox.Show("Öğretmen eklemesi Başarılı");
+            foreach (Control item in ogretmengrup.Controls) if (item is TextBox or ComboBox) item.Text = "";
+            {
+
+            }
+        }
+        public DataTable listele(SqlDataAdapter adtr, string sorgu)
+        {
+            tablo = new DataTable();
+            adtr=new SqlDataAdapter(sorgu,baglanti);
+            adtr.Fill(tablo);
+            baglanti.Close();
+            return tablo;
+        }
+        
     }
 }
